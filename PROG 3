@@ -1,0 +1,26 @@
+using System;
+using System.Data.SqlClient;
+
+class Program
+{
+    static void Main()
+    {
+        string connectionString = "Server=localhost;Database=YourDatabase;Trusted_Connection=True;";
+        string query = "SELECT TOP 5 * FROM YourTable";
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Console.WriteLine(reader["YourColumnName"]);
+            }
+
+            reader.Close();
+        }
+    }
+}
