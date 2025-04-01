@@ -1,0 +1,184 @@
+31. Calculate Compound Interest
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        double principal = 1000, rate = 5, time = 2;
+        double amount = principal * Math.Pow(1 + rate / 100, time);
+        Console.WriteLine($"Compound Interest: {amount - principal}");
+        Console.WriteLine($"
+}
+)
+
+
+
+32. Find Second Largest Number in an Array
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        int[] arr = { 10, 20, 5, 8, 15 };
+        Array.Sort(arr);
+        Console.WriteLine($"Second Largest: {arr[arr.Length - 2]}");
+    }
+}
+
+
+
+33. Check if a String Contains Only Digits
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        string input = "12345";
+        bool isDigit = input.All(char.IsDigit);
+        Console.WriteLine(isDigit ? "Only Digits" : "Contains Non-Digits");
+    }
+}
+
+
+
+34. Check if Two Strings are Anagrams
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        string str1 = "listen", str2 = "silent";
+        bool isAnagram = str1.OrderBy(c => c).SequenceEqual(str2.OrderBy(c => c));
+        Console.WriteLine(isAnagram ? "Anagrams" : "Not Anagrams");
+    }
+}
+
+
+
+35. Count Frequency of Characters in a String
+csharp
+Copy
+Edit
+using System;
+using System.Linq;
+class Program
+{
+    static void Main()
+    {
+        string input = "hello";
+        var frequency = input.GroupBy(c => c).ToDictionary(g => g.Key, g => g.Count());
+        foreach (var kvp in frequency)
+            Console.WriteLine($"{kvp.Key}: {kvp.Value}");
+    }
+}
+
+
+
+36. Find the Largest Element in a Matrix
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        int[,] matrix = { { 1, 2 }, { 3, 4 } };
+        int max = int.MinValue;
+        foreach (int num in matrix) if (num > max) max = num;
+        Console.WriteLine($"Largest Element: {max}");
+    }
+}
+
+
+
+37. Check if a Number is Palindrome
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        int num = 121, reverse = 0, temp = num;
+        while (temp > 0)
+        {
+            reverse = reverse * 10 + temp % 10;
+            temp /= 10;
+        }
+        Console.WriteLine(num == reverse ? "Palindrome" : "Not Palindrome");
+    }
+}
+
+
+
+38. Generate Random Password
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        Random rand = new Random();
+        string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        string password = new string(Enumerable.Repeat(chars, 8).Select(s => s[rand.Next(s.Length)]).ToArray());
+        Console.WriteLine($"Random Password: {password}");
+    }
+}
+
+
+
+39. Find the Transpose of a Matrix
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        int[,] matrix = { { 1, 2 }, { 3, 4 } };
+        int rows = matrix.GetLength(0), cols = matrix.GetLength(1);
+        int[,] transpose = new int[cols, rows];
+        for (int i = 0; i < rows; i++)
+            for (int j = 0; j < cols; j++)
+                transpose[j, i] = matrix[i, j];
+        foreach (int num in transpose) Console.Write(num + " ");
+    }
+}
+
+
+
+40. Calculate Sum of Digits of a Number
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        int num = 12345, sum = 0;
+        while (num > 0)
+        {
+            sum += num % 10;
+            num /= 10;
+        }
+        Console.WriteLine($"Sum of Digits: {sum}");
+    }
+}
