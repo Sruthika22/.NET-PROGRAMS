@@ -1,0 +1,178 @@
+21. Check if a Number is Positive or Negative
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        int num = -5;
+        Console.WriteLine(num > 0 ? "Positive" : num < 0 ? "Negative" : "Zero");
+    }
+}
+
+
+
+22. Calculate Simple Interest
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        double principal = 1000, rate = 5, time = 2;
+        double interest = (principal * rate * time) / 100;
+        Console.WriteLine($"Simple Interest: {interest}");
+    }
+}
+
+
+
+23. Find Square of a Number
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        int num = 4;
+        Console.WriteLine($"Square: {num * num}");
+    }
+}
+
+
+
+24. Display Multiplication Table for a Number
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        int num = 3;
+        for (int i = 1; i <= 5; i++) Console.WriteLine($"{num} x {i} = {num * i}");
+    }
+}
+
+
+
+25. Check if a Character is a Vowel
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        char ch = 'e';
+        Console.WriteLine("aeiou".Contains(char.ToLower(ch)) ? "Vowel" : "Consonant");
+    }
+}
+
+
+
+26. Calculate the Power of a Number
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        int baseNum = 2, exponent = 3, result = 1;
+        for (int i = 1; i <= exponent; i++) result *= baseNum;
+        Console.WriteLine($"{baseNum}^{exponent} = {result}");
+    }
+}
+
+
+
+27. Find GCD of Two Numbers
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        int a = 56, b = 98;
+        while (b != 0)
+        {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        Console.WriteLine($"GCD: {a}");
+    }
+}
+
+
+
+28. Sort an Array in Ascending Order
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        int[] arr = { 5, 3, 8, 1, 4 };
+        Array.Sort(arr);
+        Console.WriteLine("Sorted Array:");
+        foreach (int num in arr) Console.Write(num + " ");
+    }
+}
+
+
+29. Check Armstrong Number
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        int num = 153, sum = 0, temp = num;
+        while (temp > 0)
+        {
+            int digit = temp % 10;
+            sum += digit * digit * digit;
+            temp /= 10;
+        }
+        Console.WriteLine(sum == num ? "Armstrong" : "Not Armstrong");
+    }
+}
+
+
+30. Generate Fibonacci Sequence
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        int n = 10, a = 0, b = 1;
+        Console.Write("Fibonacci: ");
+        Console.Write($"{a} {b} ");
+        for (int i = 2; i < n; i++)
+        {
+            int c = a + b;
+            Console.Write($"{c} ");
+            a = b; b = c;
+        }
+    }
+}
