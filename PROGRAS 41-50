@@ -1,0 +1,179 @@
+41. Calculate the Sum of All Elements in a 2D Array
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        int[,] matrix = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+        int sum = 0;
+        foreach (int num in matrix) sum += num;
+        Console.WriteLine($"Sum of Elements: {sum}");
+    }
+}
+
+
+
+42. Check if a Year is a Century Year
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        int year = 1900;
+        if (year % 100 == 0) Console.WriteLine($"{year} is a Century Year");
+        else Console.WriteLine($"{year} is Not a Century Year");
+    }
+}
+
+
+
+43. Find the Smallest Element in an Array
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        int[] arr = { 15, 8, 22, 3, 12 };
+        int smallest = arr[0];
+        foreach (int num in arr) if (num < smallest) smallest = num;
+        Console.WriteLine($"Smallest Element: {smallest}");
+    }
+}
+
+
+
+44. Convert a Decimal Number to Binary
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        int num = 10;
+        string binary = "";
+        while (num > 0)
+        {
+            binary = (num % 2) + binary;
+            num /= 2;
+        }
+        Console.WriteLine($"Binary: {binary}");
+    }
+}
+
+
+
+45. Count the Number of Spaces in a String
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        string input = "Hello World from .NET";
+        int spaceCount = input.Count(c => c == ' ');
+        Console.WriteLine($"Number of Spaces: {spaceCount}");
+    }
+}
+
+
+46. Calculate the Average of Numbers in an Array
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        int[] arr = { 10, 20, 30, 40, 50 };
+        int sum = 0;
+        foreach (int num in arr) sum += num;
+        double average = (double)sum / arr.Length;
+        Console.WriteLine($"Average: {average}");
+    }
+}
+
+
+
+47. Check if a String is a Pangram
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        string input = "The quick brown fox jumps over the lazy dog".ToLower();
+        bool isPangram = "abcdefghijklmnopqrstuvwxyz".All(c => input.Contains(c));
+        Console.WriteLine(isPangram ? "Pangram" : "Not Pangram");
+    }
+}
+
+
+
+48. Find the Sum of Even and Odd Numbers Separately
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        int[] arr = { 1, 2, 3, 4, 5, 6 };
+        int evenSum = 0, oddSum = 0;
+        foreach (int num in arr)
+            if (num % 2 == 0) evenSum += num; else oddSum += num;
+        Console.WriteLine($"Even Sum: {evenSum}, Odd Sum: {oddSum}");
+    }
+}
+
+
+
+49. Find the Factorial Using Recursion
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static int Factorial(int n) => n == 0 ? 1 : n * Factorial(n - 1);
+    static void Main()
+    {
+        int num = 5;
+        Console.WriteLine($"Factorial of {num}: {Factorial(num)}");
+    }
+}
+
+
+
+50. Print a Right-Angled Triangle Pattern
+csharp
+Copy
+Edit
+using System;
+class Program
+{
+    static void Main()
+    {
+        int rows = 5;
+        for (int i = 1; i <= rows; i++)
+        {
+            Console.WriteLine(new string('*', i));
+        }
+    }
+}
